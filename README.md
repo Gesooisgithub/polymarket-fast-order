@@ -11,7 +11,7 @@ Ultra-fast trading system for Polymarket via global hotkeys. Place orders instan
 - Administrator privileges (to capture global hotkeys)
 - Wallet with USDC on Polygon
 - USDC approved for trading on Polymarket
-- Polymarket Builder API Keys
+- MetaMask wallet with private key
 
 ## Installation
 
@@ -55,15 +55,7 @@ Edit `.env` with your credentials:
 ```env
 POLYMARKET_PRIVATE_KEY=0x_your_private_key
 POLYMARKET_FUNDER_ADDRESS=0x_your_wallet_address
-POLYMARKET_API_KEY=your_api_key
-POLYMARKET_API_SECRET=your_api_secret
-POLYMARKET_PASSPHRASE=your_passphrase
 ```
-
-#### How to get API Keys:
-1. Go to [polymarket.com/settings/builder-codes](https://polymarket.com/settings/builder-codes)
-2. Create a new set of API keys
-3. Copy API Key, Secret and Passphrase into the `.env` file
 
 #### How to get your Private Key from MetaMask:
 1. Open MetaMask
@@ -71,7 +63,7 @@ POLYMARKET_PASSPHRASE=your_passphrase
 3. "Account details" > "Show private key"
 4. Enter your password and copy the key (starts with `0x`)
 
-**IMPORTANT**: Never share your private key or API keys!
+**IMPORTANT**: Never share your private key!
 
 ### 5. Approve USDC (if not done already)
 
@@ -263,7 +255,7 @@ polymarket-fast-order/
 - The private key is NEVER printed or logged
 - `.env` is in `.gitignore`
 - Orders are signed locally (the key never leaves your computer)
-- API keys are only used for authentication with the CLOB and the WebSocket channel
+- API credentials are derived automatically from your private key
 - 0.5s cooldown prevents accidental orders
 
 ## Disclaimer
